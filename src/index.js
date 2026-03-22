@@ -7,6 +7,7 @@ import cors from "cors"
 import rotaUsuarios from "./router/router_usuarios.js"
 import rotaAutenticacao from "./router/router_autenticacao.js"
 import rotaProdutos from "./router/router_produtos.js"
+import rotaReset from './router/router_resent.js'
 
 const app = express()
 const PORT = process.env.PORT || 8080
@@ -28,6 +29,7 @@ app.get("/", (req, res) => {
 app.use("/usuarios", rotaUsuarios)
 app.use("/login", rotaAutenticacao)
 app.use("/produtos", rotaProdutos)
+app.use("/reset", rotaReset)
 
 app.listen(PORT, () => {
   console.log(`✅ Servidor rodando na porta: ${PORT}`)
